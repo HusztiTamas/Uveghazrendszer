@@ -8,9 +8,9 @@ namespace Uveghazrendszer
 {
 	internal class Kezelo
 	{
-		private string nev;
-		private string azonosito;
-		private Szerepkor szerepkor;
+		string nev;
+		string azonosito;
+		Szerepkor szerepkor;
 
 		public Kezelo(string nev, string azonosito, Szerepkor szerepkor)
 		{

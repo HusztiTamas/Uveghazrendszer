@@ -6,8 +6,6 @@
 		{
 			Kezelo k = new Kezelo("Kovács Péter", "kpeter", Szerepkor.ADMIN);
 			Kezelo k1 = new Kezelo("Nagy Anna", "nanna", Szerepkor.KERTESZ);
-			Console.WriteLine();
-			Console.WriteLine();
 		}
 	}
 }
