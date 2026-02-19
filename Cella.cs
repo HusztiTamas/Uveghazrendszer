@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,17 +46,45 @@ namespace Uveghazrendszer
 			{
 				this.noveny = noveny;
 				this.egyedSzam = egyedSzam;
+				if (this.egyedSzam > noveny.OptimaisSuruseg)
+				{
+					this.noveny.EgeszsegiAllapot -= 2;
+				}
 				return true;
 			}
 			else if (noveny == this.noveny)
 			{
 				this.egyedSzam += egyedSzam;
+				if (this.egyedSzam > noveny.OptimaisSuruseg)
+				{
+					this.noveny.EgeszsegiAllapot -= 2;
+				}
 				return true;
 			}
 			else
 			{
 				return false;
 			}
+		}
+
+		public void Noveles(int egyedSzam)
+		{
+			this.Beultet(this.noveny, egyedSzam);
+		}
+
+		public void Csokkentes(int egyedSzam)
+		{
+			this.egyedSzam -= egyedSzam;
+			if (this.egyedSzam < 0)
+			{
+				this.egyedSzam = 0;
+				this.noveny = null;
+			}
+		}
+
+		public void Urites()
+		{
+			this.egyedSzam = 0;
 		}
 	}
 }
