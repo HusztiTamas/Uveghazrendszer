@@ -77,14 +77,14 @@ namespace Uveghazrendszer
 			this.egyedSzam -= egyedSzam;
 			if (this.egyedSzam < 0)
 			{
-				this.egyedSzam = 0;
-				this.noveny = null;
+				this.Urit();
 			}
 		}
 
-		public void Urites()
+		public void Urit()
 		{
 			this.egyedSzam = 0;
+			this.noveny = null;
 		}
 	}
 }
